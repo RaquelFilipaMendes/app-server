@@ -1,0 +1,13 @@
+App\StorageBundle\Entity\PhoneNumbers:
+  type: entity
+  table: phone_numbers
+  repositoryClass: App\StorageBundle\Repository\PhoneNumbersRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    ## Mandatory Fields
+    phoneNumber:
+      type:   string
+      length: 64

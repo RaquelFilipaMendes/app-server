@@ -1,0 +1,5 @@
+services:
+  App\ApiBundle\EventListener\ExceptionListener:
+    arguments: ['@logger']
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception }

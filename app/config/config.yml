@@ -1,0 +1,56 @@
+imports:
+  - { resource: parameters.yml }
+  - { resource: security.yml }
+  - { resource: services.yml }
+  - { resource: "@AppStorageBundle/Resources/config/services.yml" }
+
+parameters:
+  locale: en
+
+framework:
+  secret: '%secret%'
+  router:
+    resource: '%kernel.project_dir%/config/routing.yml'
+    strict_requirements: ~
+  form: ~
+  csrf_protection: ~
+  validation: { enabled: true }
+  default_locale: '%locale%'
+  trusted_hosts: ~
+  session:
+      # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+    handler_id: session.handler.native_file
+    save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+  fragments: ~
+  http_method_override: true
+  assets: ~
+  php_errors:
+    log: true
+
+# Doctrine Configuration
+doctrine:
+  dbal:
+    default_connection: default
+    connections:
+      default:
+        driver:         pdo_sqlite
+        host:           '%app_database_host%'
+        port:           '%app_database_port%'
+        dbname:         '%app_database_name%'
+        user:           '%app_database_user%'
+        password:       '%app_database_password%'
+        charset:        UTF8
+        server_version: 5.6
+        path:           '%kernel.project_dir%/var/data/db_app.sqlite'
+        mapping_types:
+          enum: string
+
+  orm:
+    default_entity_manager: default
+    entity_managers:
+      default:
+        connection: default
+        mappings:
+          AppStorageBundle: ~
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+

@@ -1,0 +1,18 @@
+imports:
+  - { resource: controller.yml }
+  - { resource: listener.yml }
+
+services:
+  # ResponseListener
+  security.listener.response:
+    class:  App\SecurityBundle\Services\ResponseListener
+    arguments: ['%allowed_origin%']
+    tags:
+      - { name: kernel.event_listener, event: kernel.response }
+
+  # RequestListener
+  security.listener.request:
+    class: App\SecurityBundle\Services\RequestListener
+    arguments: ['%allowed_origin%']
+    tags:
+      - { name: kernel.event_listener, event: kernel.request,  priority: 300 }

@@ -1,0 +1,6 @@
+## Phone Numbers ##
+
+api.routing.phoneNumbers:
+  path:       /phoneNumbers
+  controller: api.controller.phoneNumbers:listPhoneNumbersAction
+  methods:    GET

@@ -1,0 +1,11 @@
+services:
+  #Default
+  api.controller.default:
+    class: App\ApiBundle\Controller\DefaultController
+    arguments: []
+    public: true
+
+  api.controller.phoneNumbers:
+    class: App\ApiBundle\Controller\PhoneNumbersController
+    arguments: ['@storage.model.phoneNumbers']
+    public: true

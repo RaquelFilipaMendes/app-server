@@ -1,0 +1,4 @@
+services:
+  storage.model.phoneNumbers:
+    class: App\StorageBundle\Model\PhoneNumbersModel
+    arguments: ['@storage.repository.phoneNumbers']

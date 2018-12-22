@@ -1,0 +1,3 @@
+app_monitoring_api:
+  resource: '@AppApiBundle/Resources/config/routing.yml'
+  prefix:   /api
