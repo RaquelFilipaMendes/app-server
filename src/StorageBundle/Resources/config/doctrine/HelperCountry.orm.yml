@@ -11,9 +11,12 @@ App\StorageBundle\Entity\HelperCountry:
     countryCode:
       type:   string
       length: 64
+      nullable: true
     countryName:
       type: string
       length: 64
+      nullable: true
     countryPhoneCode:
       type:   string
       length: 64
+      nullable: true

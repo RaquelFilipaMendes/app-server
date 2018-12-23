@@ -8,10 +8,15 @@
 
 namespace App\StorageBundle\Model;
 
+use App\StorageBundle\Entity\PhoneNumbers;
 use App\StorageBundle\Repository\PhoneNumbersRepository;
 use App\StorageBundle\Transformer\PhoneNumbersTransformer;
 use App\ApiBundle\Entity\PhoneNumbers as ApiPhoneNumbers;
 
+/**
+ * Class PhoneNumbersModel
+ * @package App\StorageBundle\Model
+ */
 class PhoneNumbersModel
 {
     /**
@@ -33,11 +38,10 @@ class PhoneNumbersModel
     }
 
     /**
-     * @return ApiPhoneNumbers []
+     * @return ApiPhoneNumbers[]
      */
     public function getAllPhoneNumbers()
     {
         return $this->phoneNumbersTransformer->toMultipleApi($this->phoneNumbersRepository->findAll());
     }
-
 }

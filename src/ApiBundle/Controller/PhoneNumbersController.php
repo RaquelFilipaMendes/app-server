@@ -9,6 +9,8 @@
 namespace App\ApiBundle\Controller;
 
 use App\StorageBundle\Model\PhoneNumbersModel;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class PhoneNumbersController
@@ -16,6 +18,16 @@ use App\StorageBundle\Model\PhoneNumbersModel;
  */
 class PhoneNumbersController extends BaseController
 {
+    /**
+     * @const string STATUS_FILTER
+     */
+    const STATUS_FILTER = 'status';
+
+    /**
+     * @const string COUNTRY_FILTER
+     */
+    const COUNTRY_FILTER = 'country';
+
     /**
      * @var PhoneNumbersModel $phoneNumbersModel
      */
@@ -31,11 +43,13 @@ class PhoneNumbersController extends BaseController
         $this->phoneNumbersModel = $phoneNumbersModel;
     }
 
+
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     public function listPhoneNumbersAction()
     {
+
         return $this->getSuccessJsonResponse($this->phoneNumbersModel->getAllPhoneNumbers());
     }
 }

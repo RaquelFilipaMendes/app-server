@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/orm": "^2.5",
+        "guzzlehttp/guzzle": "^6.3",
         "okta/jwt-verifier": "^0.2.1",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/apache-pack": "^1.0",
