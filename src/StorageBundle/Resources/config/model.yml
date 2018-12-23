@@ -1,4 +1,8 @@
 services:
   storage.model.phoneNumbers:
     class: App\StorageBundle\Model\PhoneNumbersModel
-    arguments: ['@storage.repository.phoneNumbers']
+    arguments: ['@storage.repository.phoneNumbers', '@storage.transformer.phoneNumbers']
+
+  storage.model.helperCountry:
+    class: App\StorageBundle\Model\HelperCountryModel
+    arguments: ['@storage.repository.helperCountry']

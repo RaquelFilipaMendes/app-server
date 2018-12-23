@@ -8,7 +8,6 @@
 
 namespace App\ApiBundle\Controller;
 
-use App\StorageBundle\Entity\PhoneNumbers;
 use App\StorageBundle\Model\PhoneNumbersModel;
 
 /**
@@ -24,9 +23,9 @@ class PhoneNumbersController extends BaseController
 
     /**
      * PhoneNumbersController constructor.
-     * @param PhoneNumbers $phoneNumbersModel
+     * @param PhoneNumbersModel $phoneNumbersModel
      */
-    public function __construct(PhoneNumbers $phoneNumbersModel)
+    public function __construct(PhoneNumbersModel $phoneNumbersModel)
     {
         parent::__construct();
         $this->phoneNumbersModel = $phoneNumbersModel;
@@ -39,5 +38,4 @@ class PhoneNumbersController extends BaseController
     {
         return $this->getSuccessJsonResponse($this->phoneNumbersModel->getAllPhoneNumbers());
     }
-
 }

@@ -1,12 +1,14 @@
 services:
   storage.repository.phoneNumbers:
     class: App\StorageBundle\Repository\PhoneNumbersRepository
+    factory: 'Doctrine\ORM\EntityManagerInterface:getRepository'
     arguments:
       - App\StorageBundle\Entity\PhoneNumbers
     public: true
 
   storage.repository.helperCountry:
     class: App\StorageBundle\Repository\HelperCountryRepository
+    factory: 'Doctrine\ORM\EntityManagerInterface:getRepository'
     arguments:
       - App\StorageBundle\Entity\HelperCountry
     public: true

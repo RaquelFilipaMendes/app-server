@@ -1,6 +1,10 @@
 ## Phone Numbers ##
-
 api.routing.phoneNumbers:
-  path:       /phoneNumbers
+  path:       /list
   controller: api.controller.phoneNumbers:listPhoneNumbersAction
+  methods:    GET
+
+api.routing.countries:
+  path:       /countries
+  controller: api.controller.countries:listCountriesAction
   methods:    GET

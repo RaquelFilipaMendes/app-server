@@ -9,3 +9,8 @@ services:
     class: App\ApiBundle\Controller\PhoneNumbersController
     arguments: ['@storage.model.phoneNumbers']
     public: true
+
+  api.controller.countries:
+      class: App\ApiBundle\Controller\HelperCountryController
+      arguments: ['@storage.model.helperCountry']
+      public: true

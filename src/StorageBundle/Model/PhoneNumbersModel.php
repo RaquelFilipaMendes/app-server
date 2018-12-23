@@ -37,7 +37,7 @@ class PhoneNumbersModel
      */
     public function getAllPhoneNumbers()
     {
-        return $this->phoneNumbersTransformer->toMultipleApi($this->phoneNumbersRepository);
+        return $this->phoneNumbersTransformer->toMultipleApi($this->phoneNumbersRepository->findAll());
     }
 
 }

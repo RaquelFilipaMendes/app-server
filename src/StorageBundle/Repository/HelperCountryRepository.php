@@ -8,7 +8,7 @@
 
 namespace App\StorageBundle\Repository;
 
-
+use Doctrine\ORM\EntityRepository;
 use App\StorageBundle\Model\HelperCountryModel;
 
 class HelperCountryRepository extends EntityRepository
@@ -37,5 +37,4 @@ class HelperCountryRepository extends EntityRepository
 
         return $helperCountry;
     }
-
 }
